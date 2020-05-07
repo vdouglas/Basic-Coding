@@ -1,0 +1,54 @@
+/**
+ *
+ * @author vdoug
+ */
+public class MicrowaveOven {
+    /*
+    Variables for Power Level and Time.
+    */
+    int powerLevel = 1;
+    int time = 0;
+  
+    /**
+    * Resets Power Level and Time back to their original states.
+    */
+    public void clear() {
+        powerLevel = 1;
+        time = 0;
+    }// end clear method
+
+    /*
+    Takes the variable from the main class and Sets the time. 
+    */
+    public void setTime(int t) {
+    time = t;
+    }// end setTime method
+    
+    /**
+     Takes the variable from the main class and Sets the level.
+     */
+    public void setLevel(int p) throws IndexOutOfBoundsException {
+        if(p > 2){
+            throw new IndexOutOfBoundsException("Chose power Level greater than 2");
+       }else if(p < 1){
+           throw new IndexOutOfBoundsException("Chose power Level less than 1");
+       }
+        powerLevel = p;
+        //end if
+    
+    }//end setLevel method 
+
+    /*
+    Prints how long the 
+    */
+    public void start() {
+     System.out.println("Cooking for " + time + " at level " + powerLevel);
+        while(time > 0){
+          time--;
+          System.out.println(time);
+          }
+     System.out.println("Your food is done. Enjoy!");
+     
+    }//end start method
+
+}//end class
